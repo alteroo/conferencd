@@ -5,9 +5,12 @@ A conference and management engine
 Conferencd is a conference and event management engine.
 It is a distribution of Plone, primarily distrubted using docker.
 
+WARNING: This is absolutely alpha and is in a "works for us" state.
+
 ## Usage
 
 ### Running in production
+We will be adding docker-compose.yml file shortly for production deployments
 
 ### In development:
 1. Build the container
@@ -28,7 +31,7 @@ setfacl  -R -m u:500:rwX var/
 The resulting container can be launched on port 8080 with the data as follows:
 ```
  docker run -it -v $(pwd)/var/filestorage/Data.fs:/data/filestorage/Data.fs \ 
-   -v $(pwd)/var/blobstorage:/data/blobstorage -p 8080:8080 {containerid}
+   -v $(pwd)/var/blobstorage:/data/blobstorage -p 8080:8080 alteroo/conferencd
 ```
 
 ### Sending the registry
