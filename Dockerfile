@@ -3,7 +3,6 @@ FROM plone:5.1.2
 COPY docker.cfg /plone/instance/
 COPY sources.cfg /plone/instance/
 COPY pins.cfg /plone/instance/
-COPY --chown=plone:plone . /plone/instance/src/jifsjm.site
 COPY --chown=plone:plone src/collective.videolink /plone/instance/src/collective.videolink
 COPY --chown=plone:plone src/conf.policy /plone/instance/src/conf.policy
 
