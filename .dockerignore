@@ -1,0 +1,12 @@
+# comment
+var
+Dockerfile
+*.sh
+bin
+*.log
+templates
+scripts
+docs
+eggs
+buildout-cache
+develop-eggs

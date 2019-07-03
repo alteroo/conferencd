@@ -1,0 +1,6 @@
+[report]
+include =
+    src/jifsjm/*
+omit =
+    */test*
+    */upgrades/*

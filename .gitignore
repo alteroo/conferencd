@@ -1,0 +1,73 @@
+#common tarball names
+.env
+haproxy.conf
+packeddb.tgz
+supervisord.conf
+content.tar.gz
+eggs.tar.gz 
+.pem
+buildout.cfg
+*UnifiedInstaller*
+# these are ignored
+# because there is no need to automate git setup a second time
+git-init.sh
+gitlab-init.sh
+
+resources/
+#setup scripts, resources and virtualenvs
+blobstorage-jifsjm.org
+extract-eggs-from-instance-and-pin.py
+filestorage.cfg
+jifseggs.cfg
+jifseggs.txt
+sethttps.py
+
+temp_resources/
+
+# ignore common virtualenv names
+venv
+env
+
+# ignore zed and vim files and other ide files
+.zedstate
+.*.sw[op]
+.project
+.pydevproject
+.settings/
+
+.coverage
+*.egg-info
+*.log
+*.mo
+*.py?
+*.swp
+# dirs
+bin/
+buildout-cache/
+develop-eggs/
+eggs/
+htmlcov/
+include/
+lib/
+local/
+parts/
+src/*
+test.roo_addon/
+var/
+resize.sh
+# files
+.installed.cfg
+.mr.developer.cfg
+lib64
+log.html
+output.xml
+pip-selfcheck.json
+report.html
+# excludes
+!.coveragerc
+!.editorconfig
+!.gitattributes
+!.gitignore
+!.gitkeep
+!.travis.yml
+!src/jifsjm
