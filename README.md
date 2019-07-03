@@ -1,3 +1,10 @@
+# Conferenced
+A conference and management engine
+
+## Overview
+Conferencd is a conference and event management engine.
+It is a distribution of Plone, primarily distrubted using docker.
+
 ## Usage
 
 ### Running in production
