@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+ <javascript cacheable="True" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="++resource++conf/pattern-slider.js" inline="False"/>
+</object>

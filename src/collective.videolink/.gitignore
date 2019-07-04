@@ -1,0 +1,8 @@
+Paste*
+.hg*
+*.pyc
+*egg-info
+dist
+venv/
+bin/
+parts/

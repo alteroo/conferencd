@@ -1,0 +1,69 @@
+link as video view
+-------------------------------
+- [x] - make this work with the most important video sources (youtube, vimeo)
+- [x] - get the thumbnail easily
+- [x] - extend the link type to support a thumbnail index
+
+Thumbnail summary view on collections
+-----------------------------------------
+- [x] - create a thumbnail summary view for Collections(Topics)
+- [x] - register the new view (@@embeddedvideos) using generic setup and upgrade step
+- [ ] - persist thumbnails using the lead image behaviour
+
+Add new marker interface
+---------------------------
+- [x] - create a marker interface "IVideoLinkOembedable"
+- [x] - update configure.zcml so behaviour of 'link_redirect_view' browser view is overriden 
+        based on presence of "videolink.oembedable"
+- [x] - use the add_thumbnail handler (possibly rename it) to attach the new marker interface to links 
+        that are "oembedable" without error
+- [x] - remove marker interface when a link is changed to being non-oembedable
+- [x] - remove thumbnail when a link is changed to being one that has no thumbnail
+
+Other
+------------
+- [x] - support videolink list (@@embeddedvideos) on new Collection types
+- [x] - port to Plone 4
+- [x] - port to Plone 5
+- [/] - add oembed support for Plone 4 (since it works with Python 2.6+)
+        decided to use oohembed.com instead
+- [x] - register getLocation index/metadata in catalog
+
+
+figure out how to deal with local video
+---------------------------------------
+- [ ] - support local video formats (mp4, webm)
+- [ ] - figure out how best to do thumbnailing
+
+FLV and SWF support
+---------------------
+- [z] - provide a simple utility for registering an FLV player
+- [z] - embed swf files
+- [z] - smarter embedding of swf files (currently truncates them to 400 px)
+
+Test adding links
+--------------------
+- [x] - adding oembedable links
+- [x] - adding links that don't support oembed
+- [ ] - updating an oembedable link to a non-oembed link
+- [ ] - updating a non-oembed link to an oembed link
+- [ ] - updating an oembed link to a different oembed link
+
+Test list views
+------------------
+- [ ] - test enabling the list view
+- [ ] - list view on a folder
+- [ ] - list view on a collections
+- [ ] - list view with only oembed links
+- [ ] - list view with a mixture of non-oembed links
+- [ ] - list view only non-oembed links
+
+Switch to using dynamic behaviours
+------------------------------------
+- [ ] - persist thumbnails using leadimage behaviour
+- [ ] - update tests to test against behaviours
+
+Styling
+-------------
+- [ ] - add custom css for layout
+- [ ] - add custom css for loading state (inject)
