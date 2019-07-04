@@ -18,20 +18,19 @@ We will be adding docker-compose.yml file shortly for production deployments
    docker build .
 ```
 2. Get the data
+
+If you're starting from scratch, just create your own.
 ```
-pip install zc.buildout --user
-buildout init
-bin/buildout -c rsync.cfg
+mkdir -p data/filestorage
+mkdir -p data/blobstorage
 ```
-2a. Set permission on the data
+2a. Set permission on the data directory
 ```
-setfacl  -R -m u:500:rwX var/
+setfacl  -R -m u:500:rwX data/
 ```
 3. Launch the container
 The resulting container can be launched on port 8080 with the data as follows:
 ```
- docker run -it -v $(pwd)/var/filestorage/Data.fs:/data/filestorage/Data.fs \ 
-   -v $(pwd)/var/blobstorage:/data/blobstorage -p 8080:8080 alteroo/conferencd
+ docker run -it -v $(pwd)/data/filestorage:/data/filestorage \ 
+   -v $(pwd)/data/blobstorage:/data/blobstorage -p 8080:8080 alteroo/conferencd
 ```
-
-### Sending the registry
