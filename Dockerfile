@@ -19,3 +19,6 @@ RUN apt-get purge -y --auto-remove $buildDeps \
  && apt-get install -y --no-install-recommends $runDeps \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /plone/buildout-cache/downloads/*
+ 
+COPY addons.cfg /plone/instance/
+RUN gosu plone buildout -c addons.cfg
