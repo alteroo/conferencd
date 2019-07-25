@@ -1,4 +1,4 @@
-FROM plone:5.1.2
+FROM plone:5.2.0-python2
 
 COPY docker.cfg /plone/instance/
 COPY sources.cfg /plone/instance/
@@ -22,3 +22,7 @@ RUN apt-get purge -y --auto-remove $buildDeps \
  
 COPY addons.cfg /plone/instance/
 RUN gosu plone buildout -c addons.cfg
+
+COPY addSite.py /plone/instance/
+#ENV NEW_SITE_ID Plone
+#RUN gosu plone bin/instance run addSite.py 
