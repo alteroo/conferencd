@@ -30,7 +30,7 @@ setup(
     keywords='Python Plone',
     author='david',
     author_email='david@alteroo.com',
-    url='https://pypi.python.org/pypi/jifsjm.site',
+    url='',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['jifsjm'],
