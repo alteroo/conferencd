@@ -1,0 +1,28 @@
+<model 
+	xmlns:easyform="http://namespaces.plone.org/supermodel/easyform" 
+	xmlns:form="http://namespaces.plone.org/supermodel/form" 
+	xmlns:i18n="http://xml.zope.org/namespaces/i18n" 
+	xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" 
+	xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" 
+	xmlns:security="http://namespaces.plone.org/supermodel/security" 
+	xmlns:users="http://namespaces.plone.org/supermodel/users" 
+        xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+	xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="title" type="zope.schema.TextLine"
+           indexer:searchable="true">
+      <description/>
+      <title>Name</title>
+    </field>
+    <field name="description" type="zope.schema.Text"
+           indexer:searchable="true">
+      <description/>
+      <required>False</required>
+      <title>Summary</title>
+    </field>
+    <field name="embed_code" type="zope.schema.Text">
+      <description/>
+      <title>Embed Code</title>
+    </field>
+  </schema>
+</model>
