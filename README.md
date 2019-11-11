@@ -1,4 +1,4 @@
-# Conferenced
+# Conferenc'd
 A conference and management engine
 
 ## Overview
