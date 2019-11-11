@@ -2,10 +2,10 @@
 A conference and management engine
 
 ## Overview
-Conferencd is a conference and event management engine.
-It is a distribution of Plone, primarily distrubted using docker.
+Conferenc'd is a conference and event management engine.
+It is a distribution of Plone, primarily distributed using Docker.
 
-WARNING: This is absolutely alpha and is in a "works for us" state.
+WARNING: This is in early development. It has been used to host 7 conference events for customers, however we still consider it to be in a "works for us" state.
 
 ## Usage
 
