@@ -70,5 +70,5 @@ report.html
 !.gitignore
 !.gitkeep
 !.travis.yml
-!src/jifsjm
+!src/jifsjm.site
 !src/collective.videolink
