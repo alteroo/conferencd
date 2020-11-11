@@ -1,0 +1,21 @@
+location: 
+       path: /
+       portlet_manager: plone.footerportlets
+       
+title: Corporate Info
+text: >
+       <a class="footer-info-link" href="/privacy-policy">
+           Privacy Policy
+       </a><a class="footer-info-link" href="/contact">
+           Contact Us
+       </a><a class="footer-info-link" href="/employment-opportunities">
+           Employment Opportunities
+       </a><a class="footer-info-link" href="/sponsorship">
+           Sponsorship
+       </a><a class="footer-info-link" href="/travel-agency-link?original_url=https://bookings.sita.aero/itd/itd/oj/lang/en/logon">
+           Travel Agent Login
+       </a><a class="footer-info-link" href="/ceos-message">
+           CEO's Message
+       </a><a class="footer-info-link" href="/web-terms">
+           Web Terms &amp; Conditions
+       </a>

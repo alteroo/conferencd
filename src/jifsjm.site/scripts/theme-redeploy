@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import urllib
+import requests
+import os
+import sched, time
+
+TOKEN = os.environ['PLONETHEME_DEPLOY_TOKEN']
+PROJECT = os.environ['PLONETHEME_REPO']
+PROJECT_PATH = urllib.quote_plus(PROJECT)
+_URL = "https://gitlab.com/api/v4/projects/{}/jobs".format(PROJECT_PATH)
+
+scheduler = sched.scheduler(time.time, time.sleep)
+def check_status(sc):
+    print "========= Tracking theme deploy..."
+    r = requests.get(REDEPLOY_THEME_STATUS_URL,
+                    headers={"PRIVATE-TOKEN":TOKEN})
+    output = r.json()
+    print(output['status'],output['duration'])
+    if output['status'] not in ['running','pending']:
+        return
+    scheduler.enter(15, 1, check_status, (sc,))
+
+
+r = requests.get(_URL,
+                    headers={"PRIVATE-TOKEN":TOKEN})
+items = r.json()
+print(r.status_code, r.reason)
+# get the first sucessful job that is on_success_upload_theme_to_staging and master
+JOB_IDS = [item['id'] for item in items
+               if item["name"] == "on_success_upload_theme_to_staging" 
+                  and item["pipeline"]["status"] == "success" 
+                   and item["pipeline"]["ref"] == "master"]
+LAST_THEME_DEPLOY_ID = JOB_IDS[0]
+
+REDEPLOY_THEME_URL = "https://gitlab.com/api/v4/projects/{}/jobs/{}/retry".format(PROJECT_PATH,LAST_THEME_DEPLOY_ID)
+r = requests.post(REDEPLOY_THEME_URL,
+                    headers={"PRIVATE-TOKEN":TOKEN})
+print(r.status_code)
+if r.status_code == 201:
+  job_info = r.json()
+  JOB_ID = job_info['id']
+  print("redeploying theme")
+  print("visit ",r.json()['web_url']," to view the job")
+  REDEPLOY_THEME_STATUS_URL = "https://gitlab.com/api/v4/projects/{}/jobs/{}".format(PROJECT_PATH,JOB_ID)
+  scheduler.enter(15, 1, check_status, (scheduler,))
+  scheduler.run()
+
+else:
+    print("there was an error deploying the theme")
+    
+
+

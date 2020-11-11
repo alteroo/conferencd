@@ -1,0 +1,19 @@
+pwd
+echo "----> updated remote"
+git remote update
+UPSTREAM=${1:-'@{u}'}
+LOCAL=$(git rev-parse @)
+REMOTE=$(git rev-parse "$UPSTREAM")
+BASE=$(git merge-base @ "$UPSTREAM")
+
+if [ $LOCAL = $REMOTE ]; then
+    echo "------> Already Up-to-date, no update required"
+elif [ $LOCAL = $BASE ]; then
+    # changes
+    echo "-----> pulling latest changes"
+    git pull
+    echo "-----> running a rolling restart"
+    sudo bin/rolling_restart
+else
+    echo "------> be careful, did someone manually interfere with the server?"
+fi

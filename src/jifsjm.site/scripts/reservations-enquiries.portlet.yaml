@@ -1,0 +1,14 @@
+location: 
+       path: /
+       portlet_manager: plone.footerportlets
+       
+title: Reservations & Enquiries
+text: >
+    <p>USA/CAN: 1-855-WE-FLY-JA (933-5952)</p>
+    <p>New York: (718) 641-1199</p>
+    <p>Toronto: (416) 234-1388</p>
+    <p>Jamaica: (876) 619-3595 (Digicel)</p>
+    <p>Jamaica: (876) 656-9832 (LIME)</p>
+    <p>Guyana: (592) 222-0227 Ogle</p>
+    <p>Guyana: (592) 222-6513 Ogle</p>
+    <p>Guyana: (592) 261-3100 CJ International Airport</p>

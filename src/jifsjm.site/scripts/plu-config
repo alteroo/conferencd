@@ -1,0 +1,16 @@
+export plone_ssh_user=plone
+export plone_server="texasbusinesslaw.org"
+export plone_target_port=11031
+export plone_local_port=8081
+export plone_instance_path=test
+
+plu-up() { 
+           echo "------------ setting up tunnel";
+           ssh -M -S plone-ssh-ctrl-socket -fnNT -L $plone_local_port:localhost:$plone_target_port $plone_ssh_user@$plone_server;
+           echo "------------ uploading theme";
+           plonetheme-upload $1 http://127.0.0.1:$plone_local_port/$plone_instance_path; 
+           echo "------------ closing tunnel";
+           ssh -S plone-ssh-ctrl-socket -O exit $plone_ssh_user@$plone_server;
+            }
+
+alias plu-upload=plu-up

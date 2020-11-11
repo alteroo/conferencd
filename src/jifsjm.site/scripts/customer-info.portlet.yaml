@@ -1,0 +1,25 @@
+location: 
+       path: /
+       portlet_manager: plone.footerportlets
+       
+title: Customer Info
+text: >
+        <a class="footer-info-link" href="/travel-info/optional-fees/optional-fees">
+            Optional Fees
+        </a><a class="footer-info-link" href="/travel-info/legal">
+            Legal
+        </a><a class="footer-info-link" href="/travel-info/legal/contract-of-carriage">
+            Contract of Carriage
+        </a><a class="footer-info-link" href="/travel-info/contingency-plan">
+            Contingency Plan
+        </a><a class="footer-info-link" href="/travel-info/tarmac-delay">
+            Tarmac Delay
+        </a><a class="footer-info-link" href="/travel-info/children-and-infants/children-infants">
+            Travel with Unaccompanied Minors &amp; Infants
+        </a><a class="footer-info-link" href="/travel-info/special-assistance">
+            Special Assistance
+        </a><a class="footer-info-link" href="/travel-info/baggage">
+            Baggage
+        </a><a class="footer-info-link" href="/travel-info/notices">
+            Notices
+        </a>

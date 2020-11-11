@@ -1,0 +1,8 @@
+#!/bin/bash
+export time=${rolling_restart:sleep}
+${buildout:directory}/bin/supervisorctl stop instance:1
+${buildout:directory}/bin/supervisorctl start instance:1
+sleep $time
+${buildout:directory}/bin/supervisorctl stop instance:2
+${buildout:directory}/bin/supervisorctl start instance:2
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+${buildout:directory}/bin/defang
+DATAFS=${buildout:directory}/var/filestorage/Data.fs
+DATADEFANGED=${buildout:directory}/var/filestorage/Data.fs.defanged 
+DATAFSORIG=${buildout:directory}/var/filestorage/Data.fs.orig
+mv $DATAFS $DATAFSORIG
+mv $DATADEFANGED $DATAFS
