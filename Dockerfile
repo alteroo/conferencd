@@ -1,6 +1,7 @@
 FROM plone:5.1.2
 
 COPY docker.cfg /plone/instance/
+COPY jifspins.cfg /plone/instance/
 COPY sources.cfg /plone/instance/
 COPY pins.cfg /plone/instance/
 COPY --chown=plone:plone src/collective.videolink /plone/instance/src/collective.videolink
